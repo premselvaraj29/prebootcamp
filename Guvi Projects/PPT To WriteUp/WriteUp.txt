@@ -1,0 +1,43 @@
+Rule1:
+Always assume your code will fail. Design your code to handle all possible errors.
+
+Rule2:
+Log your errors to server so that the backend team can look into it for resolving.
+
+Rule3:
+Always we should try to handle the errors and not the browser. 
+
+    try - catch block or window.onError 
+
+    Error life cycle is as follows:
+    Error --> try-catch --> window.onError --> browser error
+
+Rule 4:
+Identify where errors might occur
+
+    Type coercion errors:
+        Occurs when type conversion is done
+    Data Type errors:
+        Occurs when inappropriate operations are performed on a different datatype
+    Communication Errors:
+        Invalid URL /post data
+        Server response status
+        No network connection
+        Server response content
+
+Rule 5:
+Throw your own errors
+Throw errors in low level blocks of code(libraries, utilites).
+Use try catch in high level code(business logic)
+
+Rule 6:
+Distinguish fatal vs non fatal errors
+Non fatal errors
+    User will not notice abrupt errors on the screen and the user will not be stopped from using the service.
+Fatal errors    
+    User will not be allowed to use the service anymore until the error is resolved.
+
+Rule 7: 
+Provide a debug mode
+
+

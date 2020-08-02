@@ -1,0 +1,8 @@
+Window:
+Window is the global object and it contains the execution context of the JS functions running in the browser.
+
+Screen:
+Screen contains the properties of the user's display.Screen is a property of the window object.
+
+Document:
+Document is where the DOM is rendered. Document is a property of the window object.

@@ -1,0 +1,30 @@
+Uncaught TypeError - Cannot read property: 
+Happens when the script performs operations on uninitialised variable or object
+
+TypeError - undefined is not an object:
+Happens when we try access property of an object which is undefined. Happens usually in network calls.
+
+TypeError null is not an object:
+Happens when the object is accessed before it gets initialised(mostly in DOM tree construction).
+
+unknown(script error):
+When an exception violates the same origin policy of a browser in response to the onerror callback,
+the browser responds with a 'script error
+
+TypeError: object doesn't support property:
+Happens when we try to access a property of an object does not exist
+
+TypeError "undefined" is not a function:
+Happens when we call a function before it is defined. Common in arrow function.
+
+Uncaught RangeError: Maximum Call Stack:
+Infinite loop
+
+TypeError: Cannot read property "length":
+Occurs when we try to use length with objects other than strings or arrays
+
+Uncaught TypeError: Cannot set property:
+If a variable is accessed before initialising it, this error occurs.
+
+ReferenceError : event is not defined:
+When we try to access a variable that is defined outside the scope.
