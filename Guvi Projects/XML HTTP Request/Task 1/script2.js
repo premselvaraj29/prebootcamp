@@ -11,3 +11,21 @@ request.onload = function () {
   var data = JSON.parse(this.response);
   console.log(data);
 };
+
+/* task
+
+1. Callback task - Task for callback ( in Slide )
+2. Anyo & IIFE - Do the below programs in anonymous function & IIFE ( in Slide)
+
+
+Rest countries:
+
+Get the countries in asia - filter 
+Get the countries with population less than 2L - fliter
+Bumpup the current population  of all the counteirs by 1L - Map 
+convert all the names in capital - map
+print follwoig details  name , capital , flag  - foreach,filter
+
+Print the total population of the countries  - reduce
+Print the total population of the countries in asia - filter & reduce
+ */
