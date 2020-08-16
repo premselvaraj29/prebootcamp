@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h3>
+        Request For New PAN Card Or/And Changes Or Correction in PAN Data
+      </h3>
+      <h4>
+        Fields marked with * (asterisk) are mandatory. . To avoid mistake(s),
+        please refer guidelines and instructions
+      </h4>
+    </center>
+    <form action="GET">
+      <p>
+        <span>Whether citizen of India</span>
+        <span> &nbsp; &nbsp;</span>
+        <label for="CitizenshipYes">Yes</label>
+        <input
+          type="radio"
+          name="Citizenship"
+          id="CitizenshipYes"
+          value="Yes"
+        />
+        <label for="CitizenshipNo">No</label>
+        <input type="radio" name="Citizenship" id="CitizenshipNo" value="No" />
+      </p>
+      <hr />
+      <label for="PAN">Permanent Account Number </label>
+      <span> &nbsp; &nbsp;</span>
+      <input type="text" name="PAN" id="PAN" />
+      <hr />
+      <div>
+        <input type="checkbox" name="Name" id="name" />
+        <span>
+          * 1. Name (Initials are not permitted in first and last name.
+          Applicant's proof of identity, proof of address and proof of date of
+          birth should contain the exact name mentioned in this field)
+        </span>
+      </div>
+      <hr />
+      <div>
+        <span>Title</span>
+        <span> &nbsp; &nbsp;</span>
+        <label for="Mr/Mrs">Shri/Mr</label>
+        <input type="radio" name="Mr/Mrs" id="Shri/Mr" value="Shri/Mr" />
+        <label for="Mr/Mrs">Smt/Ms</label>
+        <input type="radio" name="Mr/Mrs" id="Smt/Ms" value="Smt/Ms" />
+        <label for="Mr/Mrs">Kumari/Ms</label>
+        <input type="radio" name="Mr/Mrs" id="Kumari/Ms" value="Kumari/Ms" />
+      </div>
+      <hr />
+      <div>
+        <label for="LastName">Last Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="LastName" id="LastName" />
+        <label for="FirstName">First Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="FirstName" id="FirstName" />
+        <label for="MiddleName">Middle Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="MiddleName" id="MiddleName" />
+      </div>
+      <hr />
+      <div>
+        Name as you would like it printed on the card (Prefix like Shri, Smt,
+        Kumari, Late, Dr, CA, Ms, Mr, Mrs, M/s, Alias etc. are not allowed)
+      </div>
+      <hr />
+      <input type="text" name="Name" id="Name" />
+      <hr />
+      <div>
+        Details of Parents. (Prefix like Shri, Smt, Kumari, Late, Dr, CA, Ms,
+        Mr, Mrs, M/s, Alias etc. are not allowed.)
+      </div>
+      <hr />
+      <span>
+        Whether mother is single parent and you wish to apply for PAN by
+        furnishing the name of your mother only
+        <span> &nbsp; &nbsp;</span>
+        <label for="SingleParent">Yes</label>
+        <input
+          type="radio"
+          name="SingleParent"
+          id="SingleParentYes"
+          value="Yes"
+        />
+        <label for="SingleParent">No</label>
+        <input
+          type="radio"
+          name="SingleParent"
+          id="SingleParentNo"
+          value="No"
+        />
+      </span>
+      <hr />
+      <div>
+        <input type="checkbox" name="FatherName" id="Fathername" />
+        *Father's Name(Mandatory field. Even married women should give father's
+        name only.)
+      </div>
+      <div>
+        <label for="FatherLastName">Last Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="FatherLastName" id="FatherLastName" />
+        <label for="FatherFirstName">First Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="FatherFirstName" id="FatherFirstName" />
+        <label for="FatherMiddleName">Middle Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="FatherMiddleName" id="FatherMiddleName" />
+      </div>
+      <hr />
+      <div>
+        <input type="checkbox" name="MotherName" id="MotherName" />
+        Mother's Name(This field is optional.)
+      </div>
+      <div>
+        <label for="MotherLastName">Last Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="MotherLastName" id="MotherLastName" />
+        <label for="MotherFirstName">First Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="MotherFirstName" id="MotherFirstName" />
+        <label for="MotherMiddleName">Middle Name</label>
+        <span> &nbsp; &nbsp;</span>
+        <input type="text" name="MotherMiddleName" id="MotherMiddleName" />
+      </div>
+      <hr />
+      <span>
+        *4. Select Parent name which is to be printed on the card (In case no
+        option is provided then PAN card will be issued with father's name)
+        <span> &nbsp; &nbsp;</span>
+        <label for="IsFatherName">Father Name</label>
+        <input type="radio" name="IsFatherName" id="IsFatherName" value="Yes" />
+        <label for="IsMotherName">Mother Name</label>
+        <input type="radio" name="IsMotherName" id="IsMotherName" value="No" />
+      </span>
+      <hr />
+      <span>
+        <input type="checkbox" name="Gender" id="Gender" />
+        Gender
+        <span> &nbsp; &nbsp;</span>
+        <label for="Gender">Male</label>
+        <input type="radio" name="Gender" id="IsMale" value="Male" />
+        <label for="IsGender">Female</label>
+        <input type="radio" name="Gender" id="IsFemale" value="Female" />
+      </span>
+      <hr />
+      <span>
+        <input type="checkbox" name="PhotoMismatch" id="PhotoMismatch" />Photo
+        Mismatch</span
+      >
+      <hr />
+      <span>
+        <input type="checkbox" name="SignMismatch" id="SignMismatch" />Signature
+        Mismatch</span
+      >
+      <hr />
+      <span>
+        <input type="checkbox" name="Address" id="Address" />
+        Address for communication
+        <span> &nbsp; &nbsp;</span>
+        <label for="Residential/Office">Residential</label>
+        <input
+          type="radio"
+          name="Residential/Office"
+          id="IsResidential"
+          value="IsResidential"
+        />
+        <label for="Residential/Office">Office</label>
+        <input
+          type="radio"
+          name="Residential/Office"
+          id="IsOffice"
+          value="IsOffice"
+        />
+      </span>
+      <hr />
+      <div>
+        Office Name (to be filled only in case of office address)
+        <input type="text" name="OfficeName" id="OfficeName" />
+      </div>
+      <hr />
+      <div>
+        Flat/Door/Block No.
+        <input type="text" name="FlatNo" id="FlatNo" />
+      </div>
+      <hr />
+      <div>
+        Name of premises/building/village
+        <input type="text" name="Premises" id="Premises" />
+      </div>
+      <hr />
+      <div>
+        Road/Street/Lane/Post Office
+        <input type="text" name="Road" id="Road" />
+      </div>
+      <hr />
+      <div>
+        Area/Locality/Taluka/Sub-Division
+        <input type="text" name="Area" id="Area" />
+      </div>
+      <hr />
+      <div>
+        Town/City/District
+        <input type="text" name="Town" id="Town" />
+      </div>
+      <hr />
+      <div>
+        State/Union Territory
+        <input type="text" name="State" id="State" />
+      </div>
+      <hr />
+      <div>
+        <span>State/Union Territory</span>
+        <span> &nbsp; &nbsp;</span>
+        <input list="States" />
+        <datalist id="States">
+          <option value="Tamil Nadu"> </option>
+          <option value="Karnataka"> </option>
+          <option value="Andhra Pradesh"> </option>
+          <option value="Kerala"> </option>
+          <option value="Maharashtra"> </option>
+        </datalist>
+      </div>
+      <hr />
+      <div>
+        PIN
+        <input type="text" name="Pin" id="Pin" />
+      </div>
+      <hr />
+      <div>
+        <strong>
+          <input type="checkbox" name="updateAddress" id="updateAddress" />
+          10. If you desire to update your other address, give required details
+          & Submit proof of other address also.</strong
+        >
+      </div>
+      <div>
+        <input type="checkbox" name="updateTelephone" id="updateTelephone" />
+        Telephone Number
+        <span> &nbsp; &nbsp;</span>
+        <span>
+          <label for="Country code">Country Code</label>
+          <select name="Country code" required>
+            <option value="" disabled selected hidden>--Please select--</option>
+            <option value="argentina">ARGENTINA</option>
+            <option value="australia">AUSTRALIA</option>
+            <option value="austria">AUSTRIA</option>
+          </select>
+        </span>
+        <span> &nbsp; &nbsp;</span>
+        <span>
+          Mobile Number
+          <input type="text" name="Mobile Number" id="MobileNum" />
+        </span>
+      </div>
+      <hr />
+      <div>
+        <label for="EmailID">Email ID</label>
+        <input type="text" name="EmailID" id="EmailID" />
+      </div>
+      <hr />
+      <div>
+        In case of a citizen of India, then
+        <span> &nbsp; &nbsp;</span>
+        <label for="Aadhar/EID">Aadhar</label>
+        <input type="radio" name="Aadhar/EID" id="IsAadhar" value="IsAadhar" />
+        <span> &nbsp; &nbsp;</span>
+        <label for="Aadhar/EID">EID</label>
+        <input type="radio" name="Aadhar/EID" id="IsEID" value="IsEID" />
+      </div>
+      <hr />
+      <div>
+        <input type="checkbox" name="updateAadhar" id="updateAadhar" />
+        AADHAR Number
+        <input type="text" name="aadharNumber" id="aadharNumber" />
+      </div>
+      <hr />
+      <div>
+        * Name as per AADHAAR letter or as per the enrollment ID of Aadhaar
+        application form
+        <input type="text" name="aadharName" id="aadharName" />
+      </div>
+      <hr />
+      <div>
+        GSTN
+        <input type="text" name="GSTN" id="GSTN" />
+      </div>
+      <hr />
+      <div>
+        <input type="checkbox" name="mentionPAN" id="mentionPAN" />
+        <strong>
+          14. Mention other Permanent Account Numbers (PANs) if
+          any,inadvertently allotted to you. Submit proof of surrendered PAN(s)
+          along with the application.</strong
+        >
+      </div>
+      <hr />
+      <div>
+        <label for="PAN1">PAN 1</label>
+        <input type="text" name="PAN1" id="PAN1" />
+        <span> &nbsp; &nbsp;</span>
+        <label for="PAN2">PAN 2</label>
+        <input type="text" name="PAN2" id="PAN2" />
+      </div>
+      <hr />
+      <div>
+        <label for="PAN3">PAN 3</label>
+        <input type="text" name="PAN3" id="PAN3" />
+        <span> &nbsp; &nbsp;</span>
+        <label for="PAN4">PAN 4</label>
+        <input type="text" name="PAN4" id="PAN4" />
+      </div>
+      <hr />
+      <div>
+        <strong>Verification</strong>
+      </div>
+      <hr />
+      <div>
+        <span
+          >I/We
+          <input type="text" name="NameOfApplicant" id="NameOfApplicant" />
+          &nbsp; ,the applicant,in the capacity of &nbsp;
+          <select name="applicant" required>
+            <option value="" disabled selected hidden>--Please select--</option>
+            <option value="himself/herself">Himself/herself</option>
+            <option value="representative assistant"
+              >Representative assistant</option
+            >
+          </select>
+          do hereby declare that what is stated above is true to the best of my
+          information and belief.
+        </span>
+      </div>
+      <div>
+        I have enclosed &nbsp;
+        <input type="text" name="numOfDocuments" id="numOfDocuments" /> &nbsp;
+        (number of documents) in support of proposed changes/corrections.
+      </div>
+      <hr />
+      <div>
+        Place
+        <input type="text" name="place" id="place" />
+      </div>
+      <div>
+        Verified today, 16-08-2020
+      </div>
+      <hr />
+      <div>
+        I/we have enclosed &nbsp;
+        <select name="proofOfIdentity" required>
+          <option value="" disabled selected hidden>--Please select--</option>
+          <option value="copyOfPassport">Copy of Passport</option>
+          <option value="copyOfRationCard">Copy of Ration Card</option>
+          <option value="copyOfDrivingLicense">Copy of Driving License</option>
+        </select>
+        &nbsp; as proof of identity, &nbsp;
+        <select name="proofOfAddress" required>
+          <option value="" disabled selected hidden>--Please select--</option>
+          <option value="copyOfPassport">Copy of Passport</option>
+          <option value="copyOfRationCard">Copy of Ration Card</option>
+          <option value="copyOfDrivingLicense">Copy of Driving License</option>
+        </select>
+        &nbsp; as proof of address, &nbsp;
+        <select name="proofOfDOB" required>
+          <option value="" disabled selected hidden>--Please select--</option>
+          <option value="copyOfPassport">Copy of Passport</option>
+          <option value="copyOfRationCard">Copy of Ration Card</option>
+          <option value="copyOfDrivingLicense"
+            >Copy of Driving License</option
+          > </select
+        >&nbsp; as proof of date of birth and &nbsp;
+        <select name="proofOfPAN" required>
+          <option value="" disabled selected hidden>--Please select--</option>
+          <option value="copyOfPAN">Copy of PAN Card</option>
+          <option value="copyOfPANAllotment"
+            >Copy of PAN allotment letter</option
+          >
+          <option value="noDocument">No Document</option>
+        </select>
+        &nbsp; as proof of PAN allotted.
+      </div>
+      <hr />
+      <div>
+        Whether you wish to have &nbsp; &nbsp;
+        <label for="PAN/ePAN">Physical PAN card & ePAN Card</label>
+        <input
+          type="radio"
+          name="PAN/ePAN"
+          id="Physical PAN"
+          value="Physical PAN"
+        />
+        <span> &nbsp; &nbsp;</span>
+        <label for="PAN/ePAN">Only e-Pan card</label>
+        <input type="radio" name="PAN/ePAN" id="ePan" value="ePan" />
+        <span> &nbsp; &nbsp;</span>
+        <span><em> Fees applicable</em></span>
+      </div>
+      <div>
+        Other details
+      </div>
+      <hr />
+      <div>
+        1. Depository Account details
+      </div>
+      <hr />
+      <div>
+        <span>
+          DP ID: &nbsp; &nbsp;
+          <input type="text" name="DP_ID" id="DP_ID" />
+        </span>
+        &nbsp; &nbsp;
+        <span>
+          Client ID: &nbsp; &nbsp;
+          <input type="text" name="clientID" id="clientID" />
+        </span>
+      </div>
+      <hr />
+      <div>
+        Payment details
+      </div>
+      <hr />
+      <div>
+        <input type="radio" name="isOnlinePayment" id="isOnlinePayment" />
+        Online Payment
+      </div>
+      <hr />
+      <div>
+        For Paperless PAN Application &nbsp; &nbsp;
+
+        <input
+          type="radio"
+          name="PaperLessPan"
+          id="isPaperLessPanYes"
+          value="Yes"
+        />
+        <label for="PaperLessPan">Yes</label>
+        <input
+          type="radio"
+          name="PaperLessPan"
+          id="isPaperLessPanYes"
+          value="Yes"
+        />
+        <label for="PaperLessPan">No</label>
+      </div>
+      <br />
+      <div>
+        <span>
+          Upload Photo &nbsp; &nbsp;
+          <input type="button" value="Upload Photo" />
+        </span>
+        <span>
+          Upload Signature &nbsp;&nbsp;
+          <input type="button" value="Upload Sign" />
+        </span>
+      </div>
+      <div>
+        Upload Document &nbsp;&nbsp;
+        <input type="button" value="Upload Document" />
+      </div>
+      <br />
+      <div>
+        ALREADY UPLOADED PHOTO: &nbsp; &nbsp;
+        <textarea
+          name="uploadedPhoto"
+          id="uploadedPhoto"
+          cols="10"
+          rows="1"
+        ></textarea>
+      </div>
+      <div>
+        ALREADY UPLOADED SIGNATURE: &nbsp; &nbsp;
+        <textarea
+          name="uploadedSignature"
+          id="uploadedSignature"
+          cols="10"
+          rows="1"
+        ></textarea>
+      </div>
+      <div>
+        ALREADY UPLOADED DOCUMENTS: &nbsp; &nbsp;
+        <textarea
+          name="uploadedDocuments"
+          id="uploadedDocuments"
+          cols="30"
+          rows="10"
+        ></textarea>
+      </div>
+      <center>
+        <button type="submit">Submit</button>
+      </center>
+    </form>
+  </body>
+</html>
