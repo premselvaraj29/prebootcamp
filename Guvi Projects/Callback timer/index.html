@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let div = document.createElement("div");
+      div.setAttribute("style", "font-size:50px");
+      let initialCount = 10;
+      div.innerHTML = initialCount;
+      setTimeout(function () {
+        initialCount -= 1;
+        div.innerHTML = initialCount;
+        setTimeout(function () {
+          initialCount -= 1;
+          div.innerHTML = initialCount;
+          setTimeout(() => {
+            initialCount -= 1;
+            div.innerHTML = initialCount;
+            setTimeout(() => {
+              initialCount -= 1;
+              div.innerHTML = initialCount;
+              setTimeout(() => {
+                initialCount -= 1;
+                div.innerHTML = initialCount;
+                setTimeout(() => {
+                  initialCount -= 1;
+                  div.innerHTML = initialCount;
+                  setTimeout(() => {
+                    initialCount -= 1;
+                    div.innerHTML = initialCount;
+                    setTimeout(() => {
+                      initialCount -= 1;
+                      div.innerHTML = initialCount;
+                      setTimeout(() => {
+                        initialCount -= 1;
+                        div.innerHTML = initialCount;
+                        setTimeout(() => {
+                          initialCount -= 1;
+                          div.innerHTML = initialCount;
+                          setTimeout(() => {
+                            div.innerHTML = "Callback hell tutorial";
+                          }, 1000);
+                        }, 1000);
+                      }, 1000);
+                    }, 1000);
+                  }, 1000);
+                }, 1000);
+              }, 1000);
+            }, 1000);
+          }, 1000);
+        }, 1000);
+      }, 1000);
+      document.body.append(div);
+    </script>
+  </body>
+</html>
