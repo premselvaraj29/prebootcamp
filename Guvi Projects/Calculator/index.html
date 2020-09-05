@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+  </head>
+  <!-- <script src="script2.js"></script> -->
+  <body>
+    <script>
+      class Calculator {
+        constructor(prevOperandText, currentOperandText) {
+          this.prevOperandText = prevOperandText;
+          this.currentOperandText = currentOperandText;
+          this.clear();
+        }
+
+        appendElement(element) {
+          if (element == ".") {
+            if (this.currentOperand.toString().includes(".")) return;
+          }
+
+          this.currentOperand =
+            this.currentOperand.toString() + element.toString();
+          console.log(this.currentOperand);
+        }
+
+        clear() {
+          this.prevOperand = "";
+          this.currentOperand = "";
+          this.operation = undefined;
+        }
+
+        delete() {
+          this.currentOperand = this.currentOperand.toString().slice(0, -1);
+        }
+
+        chooseOperation(operation) {
+          if (this.currentOperand === "") return;
+          //console.log(typeof this.prevOperand);
+          if (this.prevOperand !== "") {
+            console.log("this is running");
+            this.compute();
+          }
+          this.operation = operation;
+          this.prevOperand = this.currentOperand;
+          this.currentOperand = "";
+        }
+        compute() {
+          let computation;
+          let prev = parseFloat(this.prevOperand);
+          let curr = parseFloat(this.currentOperand);
+          if (isNaN(prev) || isNaN(curr)) return;
+          switch (this.operation) {
+            case "+":
+              computation = prev + curr;
+              break;
+            case "-":
+              computation = prev - curr;
+              break;
+            case "*":
+              computation = prev * curr;
+              break;
+            case "/":
+              computation = prev / curr;
+              break;
+            case "%":
+              computation = prev % curr;
+              break;
+            default:
+              break;
+          }
+          this.currentOperand = computation.toString();
+          this.prevOperand = "";
+          this.operation = undefined;
+        }
+
+        updateDisplay() {
+          this.currentOperandText.innerHTML = this.currentOperand;
+          this.prevOperandText.innerHTML =
+            this.prevOperand +
+            (this.operation !== undefined ? this.operation.toString() : "");
+
+          this.prevOperandText.setAttribute(
+            "class",
+            "col-sm-12 text-sm-right mb-2"
+          );
+          this.prevOperandText.setAttribute(
+            "style",
+            "font-size: large; font-weight: bold;min-height:20px"
+          );
+          this.currentOperandText.setAttribute(
+            "class",
+            "col-sm-12 text-sm-right mb-2"
+          );
+          this.currentOperandText.setAttribute(
+            "style",
+            "font-size: large; font-weight: bold;min-height:20px"
+          );
+        }
+      }
+
+      function createButton(el, id) {
+        let operations = new Set(["+", "-", "*", "/", "%"]);
+        let col = document.createElement("div");
+        col.setAttribute("class", "col-sm-3");
+        let button = document.createElement("button");
+        button.setAttribute("class", "btn btn-light");
+        button.setAttribute("id", id);
+        button.setAttribute("type", "button");
+        //button.addEventListener("click", printEL);
+        button.innerHTML = el;
+
+        if (!isNaN(el)) {
+          button.setAttribute("data-number", "number");
+        } else if (operations.has(el)) {
+          button.setAttribute("data-operations", "operations");
+        } else if (el === "AC" || el === "C") {
+          button.setAttribute("data-all-clear", "all-clear");
+          // col.setAttribute("class", "col-sm-6");
+        } else if (el == "DEL") {
+          button.setAttribute("data-delete", "delete");
+        } else if (el == "=") {
+          button.setAttribute("data-equals", "equals");
+        } else if (el == ".") {
+          button.setAttribute("data-number", "number");
+        }
+
+        col.appendChild(button);
+        return col;
+      }
+
+      function createRow() {
+        let row = document.createElement("div");
+        row.setAttribute("class", "row mb-2");
+        return row;
+      }
+
+      function createRowStack() {
+        let rowStack = [];
+        let columnElements = [
+          "AC",
+          "C",
+          "DEL",
+          "%",
+          "7",
+          "8",
+          "9",
+          "/",
+          "4",
+          "5",
+          "6",
+          "*",
+          "1",
+          "2",
+          "3",
+          "-",
+          "0",
+          ".",
+          "=",
+          "+",
+        ];
+        for (let i = 0; i < 5; i++) {
+          let row = createRow();
+          for (let j = 0; j < 4; j++) {
+            let button = createButton(columnElements.shift());
+            row.append(button);
+            rowStack.push(row);
+          }
+        }
+        return rowStack;
+      }
+
+      let containerDiv = document.createElement("div");
+      containerDiv.setAttribute("class", "container");
+      containerDiv.setAttribute(
+        "style",
+        "margin-top: 200px;width: 300px;border: 2px solid rgb(134, 134, 134);border-radius: 5px;padding: 30px;"
+      );
+
+      let previousOperandRow = document.createElement("div");
+      previousOperandRow.setAttribute("class", "row");
+      previousOperandRow.setAttribute("style", "min-height:20px;");
+      previousOperandRow.setAttribute(
+        "data-previous-operand-text",
+        "previous-operand-text"
+      );
+      previousOperandRow.setAttribute("id", "previousOperandRow");
+      let previousOperandCol = document.createElement("div");
+      previousOperandCol.setAttribute("class", "col-sm-12 text-sm-right mb-2");
+      previousOperandCol.setAttribute(
+        "style",
+        "font-size: large; font-weight: bold"
+      );
+
+      let outputRow = document.createElement("div");
+      outputRow.setAttribute("class", "row");
+      outputRow.setAttribute("style", "min-height:20px;");
+      outputRow.setAttribute(
+        "data-current-operand-text",
+        "current-operand-text"
+      );
+      outputRow.setAttribute("id", "outputRow");
+      let outputColumn = document.createElement("div");
+      outputColumn.setAttribute("class", "col-sm-12 text-sm-right mb-2");
+      outputColumn.setAttribute("style", "font-size: large; font-weight: bold");
+      //outputColumn.innerHTML = 0;
+
+      outputRow.appendChild(outputColumn);
+      previousOperandRow.appendChild(previousOperandCol);
+      containerDiv.appendChild(previousOperandRow);
+      containerDiv.appendChild(outputRow);
+
+      let rowStack = createRowStack();
+      containerDiv.append(...rowStack);
+      //containerDiv.append(rowStack[0]);
+      document.body.append(containerDiv);
+
+      let numberButtons = document.querySelectorAll("[data-number]");
+      let operationButtons = document.querySelectorAll("[data-operations]");
+      let clearAllButton = document.querySelectorAll("[data-all-clear]");
+      let equalsButton = document.querySelector("[data-equals]");
+      let currentOperandText = document.querySelector(
+        "[data-current-operand-text]"
+      );
+      let previousOperandText = document.querySelector(
+        "[data-previous-operand-text]"
+      );
+
+      let deleteText = document.querySelector("[data-delete]");
+      let calculator = new Calculator(previousOperandText, currentOperandText);
+      numberButtons.forEach((button) =>
+        button.addEventListener("click", function () {
+          calculator.appendElement(button.innerHTML);
+          calculator.updateDisplay();
+        })
+      );
+
+      operationButtons.forEach((button) =>
+        button.addEventListener("click", function () {
+          calculator.chooseOperation(button.innerHTML);
+          calculator.updateDisplay();
+        })
+      );
+
+      equalsButton.addEventListener("click", function () {
+        calculator.compute();
+        calculator.updateDisplay();
+      });
+
+      clearAllButton.forEach((button) =>
+        button.addEventListener("click", function () {
+          calculator.clear();
+          calculator.updateDisplay();
+        })
+      );
+
+      deleteText.addEventListener("click", function () {
+        calculator.delete();
+        calculator.updateDisplay();
+      });
+    </script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
